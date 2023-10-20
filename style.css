@@ -1,0 +1,212 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+input{
+    height: 50%;
+    width: 75%;
+    font-size: 2.2vw;
+    border: none;
+    background-color: rgba(128, 128, 128, 0.144);
+    align-self: center;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.importantNumber{
+    color: yellow;
+    background-color: red;
+    font-size: 3vw;
+}
+
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.mainContainer .header{
+    display: flex;
+    flex-direction: row;
+    border: solid;
+    height: 80px;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.mainContainer .header .logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: solid;
+    text-align: right;
+    flex: 1;
+}
+
+.mainContainer .header .airCraftType{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border-right: solid;
+    flex: 2;
+
+}
+
+.mainContainer .header .confOfFlight{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    text-align: center;
+    flex: 1;
+}
+
+.mainContainer .flightInfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    border: solid;
+    border-top: none;
+    height: 80px;
+}
+.mainContainer .flightInfo .flightInfoItems{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
+    border-right: solid;
+}
+
+
+.mainContainer .cargoCompartmentIndex{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.mainContainer .cargoCompartmentIndex .CPTTitle{
+    border: solid;
+    border-top: none;
+    text-align: center;
+} 
+
+.mainContainer .cargoCompartmentIndex .aftAndFwdCargo{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    /* height: 150px; */
+
+}
+
+.mainContainer .cargoCompartmentIndex .aftAndFwdCargo .fwdCargo{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-left: solid;
+    border-bottom: solid;
+}
+.mainContainer .cargoCompartmentIndex .aftAndFwdCargo .fwdCargo .fwdCargoLimition{
+    border-bottom: solid;
+    font-size: 2vw;
+}
+.mainContainer .cargoCompartmentIndex .aftAndFwdCargo .fwdCargo .fwdCpts{
+    display: flex;
+    flex-direction: row;
+}
+.CPT1 , .CPT2 , .CPT3 , .CPT4 , .CPT5{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: solid;
+}
+.CPT2 , .CPT5{
+    border-right: none;
+}
+.cptlimition{
+    border-bottom: solid;
+    font-size: 1.5vw;
+}
+ .aftCargoLimition{
+    border-bottom: solid;
+    font-size: 2vw;
+    
+ }
+.aftCpts{
+    display: flex;
+    flex-direction: row;
+}
+.mainContainer .cargoCompartmentIndex .aftAndFwdCargo .aftCargo{
+    flex: 3;
+    border: solid;
+    border-top: none;
+}
+
+.middleTable{
+    display: flex;
+    flex-direction: row;
+    /* border: solid; */
+    text-align: center;
+}
+
+.passengerCabinIndex{
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.zones{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.zones input{
+    height: fit-content;
+}
+
+.zoneA , .zoneB , .zoneC{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    border: solid;
+}
+
+.zoneA , .zoneB , .zoneC{
+    border-right: none;
+}
+.passengerZoneNumber{
+    border-bottom: solid;
+}
+
+.indexZoneNumber{
+    border-top: solid;
+}
+.indexSummury{
+    flex: 3;
+    display: flex;
+    flex-direction: row;
+    border: solid;
+    border-top: none;
+}
+
+.indexSummury input{
+    width: auto;
+}
+
+.wieghtInfo{
+    flex: 1;
+    border-right: solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.indexCal{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

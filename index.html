@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="mainContainer">
+        <div class="header">
+            <div class="logo">
+                <h3>IranAir</h3>
+                <p style="font-size: small;">The Airline of the <br> Islamic Republic of Iran</p>
+            </div>
+            <div class="airCraftType">
+                <h3>TRIM SHEET</h3>
+                <P>AIRBUS A321-211 (EP-IFA)</P>
+            </div>
+            <div class="confOfFlight">
+                <div>
+                    <h3>J12Y182</h3>
+                    <p>(Y194)</p>
+                </div>
+                <p style="border-top: solid;">All Weights in kg</p>
+            </div>
+        </div>
+
+        <div class="flightInfo">
+            <div class="flightInfoItems">
+                <p>Flight No:</p>
+                <input type="text" placeholder="IR000" maxlength="7">
+            </div>
+            <div class="flightInfoItems">
+                <p>station:</p>
+                <input type="text" placeholder="IKA" maxlength="3">
+            </div>
+            <div class="flightInfoItems">
+                <p>Destenation:</p>
+                <input type="text" placeholder="IST" maxlength="3">
+            </div>
+            <div class="flightInfoItems">
+                <p>A/C Reg:</p>
+                <input type="text" placeholder="EP-IFA" maxlength="6">
+            </div>
+            <div class="flightInfoItems">
+                <p>Crew:</p>
+                <input type="text" placeholder="2/04/03">
+            </div>
+            <div class="flightInfoItems">
+                <p>Date:</p>
+                <input type="date" >
+            </div>
+        </div>
+
+        <div class="cargoCompartmentIndex">
+            <p class="CPTTitle">CARGO COMPARTMENT INDEX</p>
+            <div class="aftAndFwdCargo">
+                <div class="fwdCargo">
+                    <p class="fwdCargoLimition"> CPT-1 + CPT-2 &le; 5670 kgs</p>
+                    <div class="fwdCpts">
+                        <div class="CPT1">
+                            <p class="cpt1Limition cptlimition"> CPT.1  MAX. 2202 kg</p>
+                            <p>ACTUAL : <input class="actualCptWeight" id="cpt1Weight" type="number" max="2202" maxlength="4" placeholder="0000"></p>
+                            <input class="slideRange" id="cpt1WeightSlideRange" type="range" min="0" max="2202" value="0"  >
+                            <p>CPT-1 index :<span class="importantNumber" id="cpt1Index">0</span></p>
+                        </div>
+                        <div class="CPT2">
+                            <p class="cpt2Limition cptlimition"> CPT.2  MAX. 3468 kg</p>
+                            <p>ACTUAL : <input class="actualCptWeight" id="cpt2Weight" type="number" max="3468" maxlength="4" placeholder="0000"></p>
+                            <input class="slideRange" id="cpt2WeightSlideRange" type="range" min="0" max="3468" value="0" >
+                            <p>CPT-1 index :<span class="importantNumber" id="cpt2Index">0</span></p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="aftCargo">
+                    <p class="aftCargoLimition"> CPT-3 + CPT-4 + CPT-5 &le; <span  id="aftCargoLimition">5878</span> kgs (is ACT full : <input style=" width: auto;" id="checkACT" type="checkbox">)</p>
+                    <div class="aftCpts">
+                        <div class="CPT3">
+                            <p class="cpt3Limition cptlimition"> CPT.3  MAX. 2298 kg</p>
+                            <p>ACTUAL : <input class="actualCptWeight" id="cpt3Weight" type="number" max="2298" maxlength="4" placeholder="0000"></p>
+                            <input class="slideRange" id="cpt3WeightSlideRange" type="range" min="0" max="2298" value="0" >
+                            <p>CPT-3 index :<span class="importantNumber" id="cpt3Index">0</span></p>
+                        </div>
+                        <div class="CPT4">
+                            <p class="cpt4Limition cptlimition"> CPT.4  MAX. 2083 kg</p>
+                            <p>ACTUAL : <input class="actualCptWeight" id="cpt4Weight" type="number" max="2083" maxlength="4" placeholder="0000"></p>
+                            <input class="slideRange" id="cpt4WeightSlideRange" type="range" min="0" max="2083" value="0" >
+                            <p>CPT-4 index :<span class="importantNumber" id="cpt4Index">0</span></p>
+                        </div>
+                        <div class="CPT5">
+                            <p class="cpt5Limition cptlimition"> CPT.5  MAX. 1497 kg</p>
+                            <p>ACTUAL : <input class="actualCptWeight" id="cpt5Weight" type="number" max="1497" maxlength="4" placeholder="0000"></p>
+                            <input class="slideRange" id="cpt5WeightSlideRange" type="range" min="0" max="1497" value="0" >
+                            <p>CPT-5 index :<span class="importantNumber" id="cpt5Index">0</span></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="middleTable">
+                <div class="passengerCabinIndex">
+                    <p> PASSENGER CABIN INDEX</p>
+                    <div class="zones">
+                        <div class="zoneA">
+                            <p class="passengerZoneNumber">OA Max. 12 pax</p>
+                            <p>Actual : <input id="zoneAPax" class="actualPax" type="number" min="0" max="12" placeholder="00"></p>
+                            <input id="zoneAPaxSlideRange" class="actualPaxSlideRange" type="range" min="0" max="12" value="0">
+                            <p class="indexZoneNumber">zoneA index : <span id="zoneAIndex" class="importantNumber" >0</span></p>
+                        </div>
+                        <div class="zoneB">
+                            <p class="passengerZoneNumber">OB Max. 110 pax</p>
+                            <p>Actual : <input id="zoneBPax" class="actualPax" type="number" min="0" max="110" placeholder="000"></p>
+                            <input id="zoneBPaxSlideRange" class="actualPaxSlideRange" type="range" min="0" max="110"  value="0">
+                            <p class="indexZoneNumber">zoneB index : <span id="zoneBIndex" class="importantNumber">0</span></p>
+                        </div>
+                        <div class="zoneC">
+                            <p class="passengerZoneNumber">OC Max. 72 pax</p>
+                            <p>Actual : <input id="zoneCPax" class="actualPax" type="number" min="0" max="72" placeholder="00"></p>
+                            <input id="zoneCPaxSlideRange" class="actualPaxSlideRange" type="range" min="0" max="72" value="0">
+                            <p class="indexZoneNumber">zoneC index : <span id="zoneCIndex" class="importantNumber">0</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="indexSummury">
+                    <div class="wieghtInfo">
+                        <p>deadloade weights : <input id="totalWieghts" type="number"  placeholder="000000"></p>
+                        <p>business pax : <input id="totalCPax" type="number"  placeholder="000"></p>
+                        <p>economy  pax : <input id="totalYPax" type="number"  placeholder="000"></p>
+                        <p>TOF : <input id="TOF" type="number"  max="22174" placeholder="00000"></p>
+                        <p>DOI: <input id="DOI" type="number" min="0" placeholder="0000"></p>
+                    </div>
+                    <div class="indexCal">
+                        <div>
+                            <p>CPT indexs</p>
+                            <p id="cptIndexs">0</p>
+                        </div>
+                        <div>
+                            <p>pax indexs</p>
+                            <p id="paxIndexs">0</p>
+                        </div>
+                        <div>
+                            <p>LIZFW</p>
+                            <p id="LIZFW">0</p>
+                        </div>
+                        <div>
+                            <p>TOF I.U</p>
+                            <p id="TOFIndex">0</p>
+                        </div>
+                        <div>
+                            <p>LITOW</p>
+                            <p id="LITOW">0</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+
+        <div class="trimSheetDisplay" style="border: solid blue;">
+            <!-- <img src="./images/epfaTrimSheet.jpg" alt=""> -->
+            <canvas id="chartCanvas" style="background-image: url(./images/epfaTrimSheet.jpg); background-size: cover; border: solid; width: 100%;"></canvas>
+        </div>
+        <div class="finalizedDetailes"></div>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+</html>
