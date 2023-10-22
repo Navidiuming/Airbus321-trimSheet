@@ -163,6 +163,9 @@ let paxIndexes = document.getElementById("paxIndexs");
 let TofIndex = document.getElementById("TOFIndex");
 let LIZFW = document.getElementById("LIZFW");
 let LITOW = document.getElementById("LITOW");
+let ZFWeight = document.getElementById("ZFWeight");
+let TOWeightInput = document.getElementById("TOWeight");
+let TOWeight = 0;
 
 let cpt1Weight = 0;
 let cpt2weight = 0;
@@ -326,6 +329,14 @@ DOI.addEventListener('change',function(){
   updateIndexes();
 })
 
+TOWeightInput.addEventListener('change',function(){
+  let value =Number(this.value);
+  console.log(this.value);
+  TOWeight = value;
+
+  updateIndexes();
+})
+
 function findIndex( num , cptNum ,isPax){
   if(isPax == false){
     let thousand = 0;
@@ -389,7 +400,8 @@ function updateIndexes(){
   let LITOWLocal = LIZFWLocal + Number(TofIndex.innerHTML);
   LITOW.innerHTML = Number(LITOWLocal.toFixed(2));
 
-  drawIndexLine(LITOWLocal);
+   
+  drawIndexLine(LITOWLocal,TOWeight);
 }
 
 
@@ -397,34 +409,16 @@ function updateIndexes(){
 
 var c = document.getElementById("chartCanvas");
 var ctx = c.getContext("2d");
-ctx.lineWidth = "1";
-ctx.strokeStyle = "green";
-// ctx.moveTo(18.2,0);
-// ctx.lineTo(18.2,150);
-// ctx.moveTo(48.9,0);
-// ctx.lineTo(48.9,150);
-// ctx.moveTo(79.6,0);
-// ctx.lineTo(79.6,150);
-// ctx.moveTo(110.3,0);
-// ctx.lineTo(110.3,150);
-// ctx.moveTo(141.2,0);
-// ctx.lineTo(141.2,150);
-// ctx.moveTo(171.9,0);
-// ctx.lineTo(171.9,150);
-// ctx.moveTo(202.6,.7,0);
-// ctx.lineTo(202.6,150);
-// ctx.moveTo(233.3,0);
-// ctx.lineTo(233.3,150);
-// ctx.moveTo(264,0);
-// ctx.lineTo(264,150);
-// ctx.moveTo(294.7,0);
-// ctx.lineTo(294.7,150);
-function drawIndexLine(index){
+function drawIndexLine(indexTF , wieghtTF){
   ctx.canvas.width = ctx.canvas.width;
-  result = Number(index*3.07) -12.28;
-  ctx.moveTo(result,0);
-  ctx.lineTo(result,150);
+  ctx.lineWidth = "3";
+  ctx.strokeStyle = "blue";
+  resultTFI = 74.2 + Number(((indexTF-10))*12.68);
+  wieghtTF = 591.6 -  Number(((wieghtTF-45000)/1000)*10.15);
+  ctx.moveTo(resultTFI,35);
+  ctx.lineTo(resultTFI,590);
+  ctx.moveTo(75,wieghtTF);
+  ctx.lineTo(1215,wieghtTF);
   ctx.stroke();
 }
-
 

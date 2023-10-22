@@ -127,13 +127,16 @@
                 </div>
                 <div class="indexSummury">
                     <div class="wieghtInfo">
-                        <p>deadloade weights : <input id="totalWieghts" type="number"  placeholder="000000"></p>
-                        <p>business pax : <input id="totalCPax" type="number"  placeholder="000"></p>
-                        <p>economy  pax : <input id="totalYPax" type="number"  placeholder="000"></p>
+                        <p>ZFW : <input id="ZFWeight" type="number"  placeholder="000000"></p>
+                        <p>TOW : <input id="TOWeight" type="number"  placeholder="000000"></p>
+                        <!-- <p>economy  pax : <input id="totalYPax" type="number"  placeholder="000"></p> -->
                         <p>TOF : <input id="TOF" type="number"  max="22174" placeholder="00000"></p>
-                        <p>DOI: <input id="DOI" type="number" min="0" placeholder="0000"></p>
                     </div>
                     <div class="indexCal">
+                        <div>
+                            <p>DOI: <input id="DOI" type="number" min="0" placeholder="0000"></p>
+                        </div>
+
                         <div>
                             <p>CPT indexs</p>
                             <p id="cptIndexs">0</p>
@@ -159,9 +162,9 @@
         </div>
 
 
-        <div class="trimSheetDisplay" style="border: solid blue;">
+        <div class="trimSheetDisplay" >
             <!-- <img src="./images/epfaTrimSheet.jpg" alt=""> -->
-            <canvas id="chartCanvas" style="background-image: url(./images/epfaTrimSheet.jpg); background-size: cover; border: solid; width: 100%;"></canvas>
+            <canvas id="chartCanvas" width="1235px" height="637px" style="background-image: url(./images/epfaTrimSheet.jpg); background-size: cover; border: solid; width: 100%;"></canvas>
         </div>
         <div class="finalizedDetailes"></div>
     </div>
