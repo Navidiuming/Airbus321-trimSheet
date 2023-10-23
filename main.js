@@ -163,7 +163,8 @@ let paxIndexes = document.getElementById("paxIndexs");
 let TofIndex = document.getElementById("TOFIndex");
 let LIZFW = document.getElementById("LIZFW");
 let LITOW = document.getElementById("LITOW");
-let ZFWeight = document.getElementById("ZFWeight");
+let ZFWeightInput = document.getElementById("ZFWeight");
+let ZFWeight = 0;
 let TOWeightInput = document.getElementById("TOWeight");
 let TOWeight = 0;
 
@@ -337,6 +338,14 @@ TOWeightInput.addEventListener('change',function(){
   updateIndexes();
 })
 
+ZFWeightInput.addEventListener('change',function(){
+  let value =Number(this.value);
+  console.log(this.value);
+  ZFWeight = value;
+
+  updateIndexes();
+})
+
 function findIndex( num , cptNum ,isPax){
   if(isPax == false){
     let thousand = 0;
@@ -401,7 +410,7 @@ function updateIndexes(){
   LITOW.innerHTML = Number(LITOWLocal.toFixed(2));
 
    
-  drawIndexLine(LITOWLocal,TOWeight);
+  drawIndexLine(LITOWLocal,TOWeight , LIZFWLocal ,ZFWeight);
 }
 
 
@@ -409,16 +418,36 @@ function updateIndexes(){
 
 var c = document.getElementById("chartCanvas");
 var ctx = c.getContext("2d");
-function drawIndexLine(indexTF , wieghtTF){
+function drawIndexLine(indexTF , wieghtTF ,indexZF,wieghtZF){
   ctx.canvas.width = ctx.canvas.width;
   ctx.lineWidth = "3";
-  ctx.strokeStyle = "blue";
-  resultTFI = 74.2 + Number(((indexTF-10))*12.68);
-  wieghtTF = 591.6 -  Number(((wieghtTF-45000)/1000)*10.15);
+  let resultTFI = 74.2 + Number(((indexTF-10))*12.68);
+  let resultWieghtTF = 591.6 -  Number(((wieghtTF-45000)/1000)*10.15);
+  ctx.beginPath();
+  ctx.strokeStyle = 'blue';
   ctx.moveTo(resultTFI,35);
   ctx.lineTo(resultTFI,590);
-  ctx.moveTo(75,wieghtTF);
-  ctx.lineTo(1215,wieghtTF);
+  ctx.moveTo(75,resultWieghtTF);
+  ctx.lineTo(1215,resultWieghtTF);
   ctx.stroke();
+  // Draw the green line.
+
+  ctx.lineWidth = "3";
+  let resultZFI = 74.2 + Number(((indexZF-10))*12.68);
+  let resultWieghtZF = 591.6 -  Number(((wieghtZF-45000)/1000)*10.15);
+  ctx.beginPath();
+  ctx.strokeStyle = 'red';
+  ctx.moveTo(resultZFI,35);
+  ctx.lineTo(resultZFI,590);
+  ctx.moveTo(75,resultWieghtZF);
+  ctx.lineTo(1215,resultWieghtZF);
+  ctx.stroke();
+
+  // Draw the red line.
+
+
+
+  
 }
+
 
